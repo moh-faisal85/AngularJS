@@ -1,0 +1,11 @@
+Create Angular Project
+**********************
+-created project using ng new "ProjectName" (Training.Angular19.Project)
+-created a new folder under src\app\components
+create angular component
+************************
+-created two component as user and admin using below command
+
+Run angular project
+*******************
+-run angular project using "ng serve" command under project level folder using dos command
