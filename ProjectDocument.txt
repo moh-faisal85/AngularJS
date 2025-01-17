@@ -1,18 +1,8 @@
-Create Angular Project
-**********************
--created project using ng new "ProjectName" (Training.Angular19.Project)
--created a new folder under src\app\components
-create angular component
-************************
--created two component as user and admin using below command
 
-Run angular project
-*******************
--run angular project using "ng serve" command under project level folder using dos command.
-
-
+***
 Git
 ***
+
 git remote add origin https://github.com/moh-faisal85/AngularJS.git
 git branch -M master
 git push -u origin master
@@ -22,3 +12,23 @@ Training Link:
 ******************
 1. Git & GitHub :   https://www.youtube.com/watch?v=VIBWdLLq9kQ&t=2479s - Completed
 2. Angular 19   :   https://www.youtube.com/watch?v=ksablkcwKB0&list=PL7JmcZV0UQtVNlr8JrjNWzLPtVMjGH_Z2
+
+
+
+
+Part-1:Create Angular Project
+**********************
+-created project using ng new "ProjectName" (Training.Angular19.Project)
+-created a new folder under src\app\components
+create angular component
+************************
+-created two component as user and admin using below command
+
+Part-1:Run angular project
+*******************
+-run angular project using "ng serve" command under project level folder using dos command.
+
+Part-2-Create component
+******************
+ng generate component componentname
+ng g c componentname
