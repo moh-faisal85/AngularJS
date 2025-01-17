@@ -8,4 +8,17 @@ create angular component
 
 Run angular project
 *******************
--run angular project using "ng serve" command under project level folder using dos command
+-run angular project using "ng serve" command under project level folder using dos command.
+
+
+Git
+***
+git remote add origin https://github.com/moh-faisal85/AngularJS.git
+git branch -M master
+git push -u origin master
+
+******************
+Training Link:
+******************
+1. Git & GitHub :   https://www.youtube.com/watch?v=VIBWdLLq9kQ&t=2479s - Completed
+2. Angular 19   :   https://www.youtube.com/watch?v=ksablkcwKB0&list=PL7JmcZV0UQtVNlr8JrjNWzLPtVMjGH_Z2
