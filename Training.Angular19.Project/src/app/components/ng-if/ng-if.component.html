@@ -5,12 +5,24 @@
             Angular ng If toggle div1
         </div>
     </div>
+    <div class="col-4">
+        <div class="bg-primary p-3" *ngIf="number1 == number2">
+            Both Number1 & Number2 values are same
+        </div> 
+        <div class="bg-primary p-3" *ngIf="number1 != number2">
+            Both Number1 & Number2 values are not same
+        </div>
+    </div>
 </div>
 
 <div class="row pt-2">
     <div class="col-3 text-center">
         <button class="btn btn-danger" (click)="hideDiv()">Hide</button>
         <button class="btn btn-success mx-3" (click)="showDiv()">Show</button>
+    </div>
+    <div class="col-3">
+        <input type="text" name="" id="" [(ngModel)]="number1">
+        <input type="text" name="" id="" [(ngModel)]="number2">
     </div>
 </div>
 <hr/>
