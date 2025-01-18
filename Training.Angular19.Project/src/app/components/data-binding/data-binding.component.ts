@@ -14,6 +14,8 @@ isActive:boolean = true;
 currentDate:Date = new Date();
 myPlaceholder:string = "Enter the Full Name";
 div1ClassName:string = "bg-primary";
+selectedCity:string  = "selectedCity";
+
 constructor() {
   console.log(this.firstName); 
   console.log(this.rollNumber); 
@@ -32,4 +34,8 @@ OnCityChanges(event: Event)
   console.log(event);
 }
 
+OnCityChange()
+{
+  alert("Selected City - Two Way Binding : "+this.selectedCity)
+}
 }

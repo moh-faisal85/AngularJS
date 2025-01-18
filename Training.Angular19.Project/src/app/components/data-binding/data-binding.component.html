@@ -50,4 +50,16 @@
         <input type="text" [(ngModel)]="firstName">
     </div>
 </div>
-
+<hr/>
+<h2>6.Show Static List Dropdown - Two way binding</h2>
+<div class="row">
+  
+    <div class="col-3">
+        <select [(ngModel)] = "selectedCity" (change)="OnCityChange()">
+            <option>Chennai</option>
+            <option>Hyderabad</option>
+            <option>Coimbature</option>
+            <option>Mumbai</option>
+        </select> -- {{selectedCity}}
+    </div>
+</div>
