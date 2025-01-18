@@ -12,12 +12,17 @@ rollNumber:number =123;
 isActive:boolean = true;
 currentDate:Date = new Date();
 myPlaceholder:string = "Enter the Full Name";
-div1ClassName:string = "bg-primary"
+div1ClassName:string = "bg-primary";
 constructor() {
   console.log(this.firstName); 
   console.log(this.rollNumber); 
   console.log(this.isActive); 
   console.log(this.currentDate); 
+}
+
+showWelcomeMessage()
+{
+  alert("Welcome to Angular 19 Tutorial")
 }
 
 }
