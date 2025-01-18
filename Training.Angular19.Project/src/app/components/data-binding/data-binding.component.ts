@@ -11,7 +11,8 @@ firstName: string = "Faisal";
 rollNumber:number =123;
 isActive:boolean = true;
 currentDate:Date = new Date();
-
+myPlaceholder:string = "Enter the Full Name";
+div1ClassName:string = "bg-primary"
 constructor() {
   console.log(this.firstName); 
   console.log(this.rollNumber); 
