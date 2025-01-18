@@ -1,0 +1,16 @@
+
+<div class="row">
+    <div class="col-3">
+        <div class="bg-success p-3" *ngIf="div1Visiable">
+            Angular ng If toggle div1
+        </div>
+    </div>
+</div>
+
+<div class="row pt-2">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv()">Hide</button>
+        <button class="btn btn-success mx-3" (click)="showDiv()">Show</button>
+    </div>
+</div>
+<hr/>
