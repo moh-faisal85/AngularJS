@@ -24,5 +24,11 @@ showWelcomeMessage()
 {
   alert("Welcome to Angular 19 Tutorial")
 }
+OnCityChanges(event: Event)
+{
+  const selectedCity = (event.target as HTMLSelectElement).value; // Get the selected value
+  alert('Selected City: '+ selectedCity);
+  console.log(event);
+}
 
 }
