@@ -25,4 +25,24 @@
             </option>
         </select>
     </div>
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Contact No.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employeeArray; let srno=index">
+                    <td>{{srno+1}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.city}}</td>
+                    <td>{{emp.contactNo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
