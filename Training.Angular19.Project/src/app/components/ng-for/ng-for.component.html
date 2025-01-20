@@ -15,4 +15,14 @@
         </div>
          
     </div>
+  
+</div>
+<div class="row">
+    <div class="col-3">
+        <select>
+            <option *ngFor="let emp of employeeArray" [value]="emp.empId">
+            {{emp.name}} - {{emp.city}}
+            </option>
+        </select>
+    </div>
 </div>
