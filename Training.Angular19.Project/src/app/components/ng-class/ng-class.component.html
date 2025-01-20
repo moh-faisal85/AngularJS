@@ -1,0 +1,21 @@
+<p>ng-class works!</p>
+<div class="row">
+    <div class="col-3 p-3" [ngClass]="div1BgColor">
+        Div1
+    </div>
+    <div class="col-3 p-3" [ngClass] = "isChecked == true ? 'bg-success':'bg-danger'">
+        Div2
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="addDiv1Color('bg-success')">Add Green </button>
+        <button class="btn btn-danger" (click)="addDiv1Color('bg-danger')">Add Danger </button>
+    </div>
+    <div class="col-3">
+        <input type="checkbox"  [(ngModel)]="isChecked" />
+        - {{isChecked}}
+    </div>
+</div>
+
