@@ -32,3 +32,19 @@ Part-2-Create component
 ******************
 ng generate component componentname
 ng g c componentname
+
+Part-3-Data Binding
+********************
+- Install bootstrap using vs code terminal by executing below command
+
+    npm i bootstrap 
+-An bootstrap package reference entry gets added into package.json	  
+-Add below bootstrap css reference in angular.json file 
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css", 
+Note: Line number 30 
+
+- Create a new component as dataBinding and create properties and print the same
+- Data Binding  
+    One way databinding - attribute Binding
+    two way Binding
+
