@@ -12,7 +12,8 @@ export class NgClassComponent {
 
   div1BgColor:string = "bg-success";
   isChecked:boolean = false;
-
+  div3ClassName : string = '';
+  
   addDiv1Color(className:string)
   {
     this.div1BgColor = className;
