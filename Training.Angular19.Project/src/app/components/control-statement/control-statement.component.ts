@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './control-statement.component.css'
 })
 export class ControlStatementComponent {
-
+div1Visible:boolean = false;
+hideShowDiv1(isShow:boolean)
+{
+this.div1Visible=isShow;
+}
 }

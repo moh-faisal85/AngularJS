@@ -23,7 +23,7 @@ export const routes: Routes = [
         component:NgClassComponent
     },
     {
-        path:'control-flow',
+        path:'control-faisal',
         component:ControlStatementComponent
     },
 ];
