@@ -7,13 +7,26 @@
         }
     </div>
     <div class="col-3">
-        <div class="bg-primary p-3">Div-2</div>
-    </div>
-    <div class="row pt-4">
-        <div class="col-3">
-            <button class="btn btn-success" (click)="hideShowDiv1(true)">Show</button>
-            <button class="btn btn-danger" (click)="hideShowDiv1(false)">Hide</button>
+        @if(isChecked == true)
+        {
+        <div class="bg-primary p-3">
+            Checkbox is Checked
         </div>
+        }
+        @else
+        {
+        <div class="bg-danger p-3">
+            Checkbox is Unchecked
+        </div>
+        }
     </div>
-    
+</div>
+<div class="row pt-4">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="hideShowDiv1(true)">Show</button>
+        <button class="btn btn-danger" (click)="hideShowDiv1(false)">Hide</button>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" name="" id="" [(ngModel)]="isChecked" /> --{{isChecked}}
+    </div>
 </div>
