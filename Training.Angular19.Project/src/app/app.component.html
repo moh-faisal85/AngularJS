@@ -32,6 +32,10 @@
       </div>
     </div>
   </nav>
+  <!-- Scroll to Top Button -->
+<button class="scroll-to-top" *ngIf="showScroll" (click)="scrollToTop()">
+  ⬆️
+</button>
 </main>
 
 <router-outlet></router-outlet>
