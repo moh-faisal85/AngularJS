@@ -20,6 +20,24 @@
         </div>
         }
     </div>
+    <div class="col-3">
+        @if(dayName == "mon")
+        {
+        <span>Monday</span>
+        }
+        @else if(dayName == "tue")
+        {
+        <span>Tuesday</span>
+        }
+        @else if(dayName == "wed")
+        {
+        <span>WednesDay</span>
+        }
+        @else {
+            <span>Enter Proper Day Name:</span>
+        }
+
+    </div>
 </div>
 <div class="row pt-4">
     <div class="col-3">
@@ -28,5 +46,9 @@
     </div>
     <div class="col-3">
         <input type="checkbox" name="" id="" [(ngModel)]="isChecked" /> --{{isChecked}}
+    </div>
+
+    <div class="col-3">
+        <input type="text" name="" id="" [(ngModel)]="dayName" maxlength="3" placeholder="Enter Day Starting"/> --{{dayName}}
     </div>
 </div>

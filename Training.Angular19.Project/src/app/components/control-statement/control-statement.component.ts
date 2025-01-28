@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class ControlStatementComponent {
 div1Visible:boolean = false;
 isChecked:boolean = false;
-
+dayName:string='';
 hideShowDiv1(isShow:boolean)
 {
 this.div1Visible=isShow;
