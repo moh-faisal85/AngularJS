@@ -1,4 +1,4 @@
-import { Component, linkedSignal, signal } from '@angular/core';
+import { Component, effect, linkedSignal, signal } from '@angular/core';
 
 @Component({
   selector: 'app-linked-signal',
@@ -38,5 +38,13 @@ export class LinkedSignalComponent
   {
     //alert("ChangeId");
     this.user.set({id:123, name:"Sul"});
+  }
+  /**
+   *
+   */
+  constructor() {
+    //effect methid will be executed when signal variable (user) gets change
+    effect(()=> console.log(`count changed ${this.user}`))
+    
   }
 }
