@@ -26,4 +26,17 @@ export class LinkedSignalComponent
   {
     this.lastName.set("Arif");
   }
+
+  user = signal({id:111, name:"Faisal"});
+  email = linkedSignal({
+    source: this.user,
+    computation:user => `${user.name + user.id}@gmail.com`,
+    equal: (a:any, b:any) => a.id !== b.id //Based on this condition true only then perform computation
+  })
+
+  changeId()
+  {
+    //alert("ChangeId");
+    this.user.set({id:123, name:"Sul"});
+  }
 }
