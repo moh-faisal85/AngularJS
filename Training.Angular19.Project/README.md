@@ -63,3 +63,6 @@ Angular Notes
 **********************
 
 - Angular 19 - Part-9 got completed
+
+Part-10: Form Template : Copy form template from below url
+https://getbootstrap.com/docs/5.0/forms/validation/
