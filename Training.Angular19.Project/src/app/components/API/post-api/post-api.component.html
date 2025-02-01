@@ -23,6 +23,7 @@
           <th>Model Name</th>
           <th>Req No</th>
           <th>Daily Rate</th>
+          <th>Image</th>
           </thead>
           <tbody>
             @for (car of carList; track $index) {
@@ -32,6 +33,7 @@
               <td>{{car.model}}</td>
               <td>{{car.regNo}}</td>
               <td>{{car.dailyRate}}</td>
+              <td class="text-center"><img class="rounded-circle" [src]="car.carImage" width="60px" height="60px"/></td>
             </tr>
             }
           </tbody>
