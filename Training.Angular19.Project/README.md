@@ -77,3 +77,5 @@ https://app.beeceptor.com/mock-server/json-placeholder
 https://fake-store-api.mock.beeceptor.com/api/products
 
 https://freeapi.miniprojectideas.com/index.html
+
+Part-15 - Completed CRUD API method
