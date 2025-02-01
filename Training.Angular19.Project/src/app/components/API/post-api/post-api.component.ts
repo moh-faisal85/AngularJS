@@ -9,8 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './post-api.component.css'
 })
 export class PostApiComponent {
-
+  //Create default Car List object
   carList: any[] = [];
+  //Create default car object
   carObj: any =
     {
       "carId": 0,
@@ -22,31 +23,62 @@ export class PostApiComponent {
       "carImage": "",
       "regNo": ""
     };
-
+  //Inject HttpClient without constructor
   httpclient = inject(HttpClient);
-  
 
-  getAllCars()
-  {
-    this.httpclient.get("api/CarRentalApp/GetCars").subscribe((res:any) =>
-      {
-        this.carList = res.data;
-        //debugger;
-      })
+  //Get Car Object using API
+  getAllCars() {
+    this.httpclient.get("api/CarRentalApp/GetCars").subscribe((res: any) => {
+      this.carList = res.data;
+      //debugger;
+    })
   }
 
-  onSaveCar(){
-    this.httpclient.post("api/CarRentalApp/CreateNewCar", this.carObj).subscribe((response:any)=>{
-      if(response.result)
-      {
+  //Create a new Car Object using API
+  onSaveCar() {
+    this.httpclient.post("api/CarRentalApp/CreateNewCar", this.carObj).subscribe((response: any) => {
+      if (response.result) {
         alert("New Car Details Saved Successfully");
         this.getAllCars();
       }
-      else
-      {
+      else {
         alert("Error: " + response.message);
       }
     })
 
+  }
+
+  //On Edit Button click show the respective Car Object details in UI
+  onEdit(data: any) {
+    this.carObj = data;
+  }
+
+  //Update Car Object using API
+  onUpdateCar() {
+    this.httpclient.put("api/CarRentalApp/UpdateCar", this.carObj).subscribe((response: any) => {
+      if (response.result) {
+        alert("Car Details Updated Successfully");
+        this.getAllCars();
+      }
+      else {
+        alert("Error: " + response.message);
+      }
+    })
+  }
+
+  //Delete Car Object using API
+  onDelete(id: number) {
+    const isDelete = confirm("Are you sure want to delete ?");
+    if (isDelete) {
+      this.httpclient.delete("api/CarRentalApp/DeleteCarbyCarId?carid=" + id).subscribe((response: any) => {
+        if (response.result) {
+          alert("Car Details Deleted Successfully");
+          this.getAllCars();
+        }
+        else {
+          alert("Error: " + response.message);
+        }
+      })
+    }
   }
 }
