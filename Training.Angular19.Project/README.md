@@ -65,10 +65,15 @@ Angular Notes
 - Angular 19 - Part-9 got completed
 
 Part-10: Form Template : Copy form template from below url
+---------------------------------------------------
 https://getbootstrap.com/docs/5.0/forms/validation/
 
+
 Part-12: Get pre build api from following web sites
+---------------------------------------------------
 https://jsonplaceholder.typicode.com/users
 
 https://app.beeceptor.com/mock-server/json-placeholder
 https://fake-store-api.mock.beeceptor.com/api/products
+
+https://freeapi.miniprojectideas.com/index.html
