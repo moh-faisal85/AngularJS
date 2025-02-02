@@ -86,3 +86,15 @@ Part-16-Customer Management System
 -Create Service => write api call function
 -call service api function in component to perform CRUD operation
 -Add validation
+
+Part-18-Angular-Event:
+***********************
+constructor
+ngOnChanges
+ngOnInit                -   When the component gets initialized
+ngDoCheck
+ngAfterContentInit      - When external content starts initialize like image , PDF
+ngAfterContentChecked   - When external content properly loaded
+ngAfterViewInit         - When view successfully initialize
+ngAfterViewChecked      - When view successfully loaded
+ngOnDestroy             - When view redirect initiated

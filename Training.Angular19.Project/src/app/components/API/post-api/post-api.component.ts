@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
-export class PostApiComponent {
+export class PostApiComponent implements OnInit, AfterViewInit{
+  ngAfterViewInit(): void {
+    //Track the performance of View chiled, Third Party Library
+    console.log("ngAfterViewInit",performance.now())
+  }
+  
+  ngOnInit(): void {
+    this.getAllCars();
+  }
   //Create default Car List object
   carList: any[] = [];
   //Create default car object
