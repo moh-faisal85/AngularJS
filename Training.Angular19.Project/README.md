@@ -79,3 +79,10 @@ https://fake-store-api.mock.beeceptor.com/api/products
 https://freeapi.miniprojectideas.com/index.html
 
 Part-15 - Completed CRUD API method
+
+Part-16-Customer Management System
+-Design UI
+-Create IObject and Bind it to form
+-Create Service => write api call function
+-call service api function in component to perform CRUD operation
+-Add validation
