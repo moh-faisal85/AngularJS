@@ -53,10 +53,6 @@
                         <input type="text" [(ngModel)]="customerObj.mobileNo" class="form-control" id="">
                     </div>
                     <div class="col-6">
-                        <label for="">City</label>
-                        <input type="text" [(ngModel)]="customerObj.customerCity" class="form-control" id="">
-                    </div>
-                    <div class="col-6">
                         <label for="">Email</label>
                         <input type="text" [(ngModel)]="customerObj.email" class="form-control" id="">
                     </div>
@@ -69,7 +65,7 @@
                         </button>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-success">
+                        <button class="btn btn-success" (click)="onSaveCustomer()">
                             Save
                         </button>
                     </div>
