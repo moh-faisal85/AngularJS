@@ -1,5 +1,22 @@
 <p>ng-for works!</p>
 <div class="row">
+    <div class="col-8 text-bold">
+        Course Name : {{courseName}} <br/>
+        Upper Case : {{courseName | uppercase}} <br/>
+        Lower Case : {{courseName | lowercase}} <br/>
+        Employee object : {{employeeArray | json}}<br/>
+        Current Date : {{currentDate}} <br/>
+        Formated Date: {{currentDate}} <br/>
+        Formated Date: {{currentDate |  date:'dd-MMM-yy'}} <br/>
+        Formated Date: {{currentDate |  date:'dd'}} <br/>
+        Formated Date: {{currentDate |  date:'MMM'}} <br/>
+        Formated Date: {{currentDate |  date:'yyyy'}} <br/>
+        Formated Time: {{currentDate |  date:'hh:mm:ss'}} <br/>
+
+        <hr/>
+    </div>
+</div>
+<div class="row">
     <div class="col-2">
         <ul>
             <li *ngFor="let city of cityList">{{city}}</li>
@@ -33,14 +50,16 @@
                     <th>Name</th>
                     <th>City</th>
                     <th>Contact No.</th>
+                    <th>Salary</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let emp of employeeArray; let srno=index">
                     <td>{{srno+1}}</td>
-                    <td>{{emp.name}}</td>
-                    <td>{{emp.city}}</td>
+                    <td>{{emp.name  | titlecase | lowercase }}</td>
+                    <td>{{emp.city | uppercase }}</td>
                     <td>{{emp.contactNo}}</td>
+                    <td>{{emp.salary | currency:'INR'}}</td>
                 </tr>
             </tbody>
         </table>

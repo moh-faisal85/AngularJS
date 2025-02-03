@@ -11,6 +11,8 @@ import { GetApiComponent } from './components/API/get-api/get-api.component';
 import { PostApiComponent } from './components/API/post-api/post-api.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { NgForComponent } from './components/ng-for/ng-for.component';
+import { CustomPipeIntegrationComponent } from './components/custom-pipe-integration/custom-pipe-integration.component';
 
 export const routes: Routes = [
     {
@@ -65,5 +67,13 @@ export const routes: Routes = [
     {
         path:'lifeCycle',
         component:LifeCycleComponent
+    },
+    {
+        path:'forloop',
+        component:NgForComponent
+    },
+    {
+        path:'customPipe',
+        component:CustomPipeIntegrationComponent
     }
 ];

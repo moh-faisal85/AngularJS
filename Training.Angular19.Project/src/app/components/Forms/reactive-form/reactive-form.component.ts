@@ -34,7 +34,12 @@ export class ReactiveFormComponent {
   {
     if (this.userForm.valid) {
       const formValue = this.userForm.value;
+      
       debugger;
     }
+  }
+  onClear()
+  {
+    this.userForm.reset();
   }
 }

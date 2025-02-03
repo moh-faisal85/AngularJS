@@ -89,4 +89,8 @@ export class PostApiComponent implements OnInit, AfterViewInit{
       })
     }
   }
+
+  clearForm(){
+    
+  }
 }

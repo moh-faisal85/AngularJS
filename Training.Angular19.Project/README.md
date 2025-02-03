@@ -98,3 +98,56 @@ ngAfterContentChecked   - When external content properly loaded
 ngAfterViewInit         - When view successfully initialize
 ngAfterViewChecked      - When view successfully loaded
 ngOnDestroy             - When view redirect initiated
+
+Part-19-Angular Pipes (Data Formatting feature)
+
+
+Name	        -   Description
+*************       ***********
+AsyncPipe       -   Read the value from a Promise or an RxJS Observable.
+
+
+DecimalPipe	    -   Transforms a number into a string with a decimal point, formatted according to locale rules.
+I18nPluralPipe  -   Maps a value to a string that pluralizes the value according to locale rules.
+I18nSelectPipe  -   Maps a key to a custom selector that returns a desired value.
+KeyValuePipe    -   Transforms Object or Map into an array of key value pairs.
+PercentPipe     -   Transforms a number to a percentage string, formatted according to locale rules.
+SlicePipe       -   Creates a new Array or String containing a subset (slice) of the elements.
+
+- DatePipe        -   Formats a Date value according to locale rules.
+- JsonPipe        -   Transforms an object to a string representation via JSON.stringify, intended for debugging.
+- LowerCasePipe   -   Transforms text to all lower case.
+- TitleCasePipe   -   Transforms text to title case.
+- UpperCasePipe   -   Transforms text to all upper case.
+- CurrencyPipe    -   Transforms a number to a currency string, formatted according to locale rules.
+
+
+CurrencyCode  CurrencyName	    Symbol
+-************  ************      ******
+AED	          UAE Dirham	      د.إ   
+AUD	        Australian Dollar   A$
+CAD	          Canadian Dollar	  C$
+CHF	          Swiss Franc	      CHF
+CNY	          Chinese Yuan	    ¥
+EUR	          Euro	            €
+GBP	     British Pound Sterling	£
+HKD	          Hong Kong Dollar	HK$
+INR	          Indian Rupee	    ₹
+JPY	          Japanese Yen	    ¥
+KRW	          South Korean Won	₩
+MXN	          Mexican Peso	    $
+MYR	         Malaysian Ringgit	RM
+NZD	         New Zealand Dollar	NZ$
+SGD	          Singapore Dollar	S$
+THB	          Thai Baht	        ฿
+USD	          US Dollar	        $
+ZAR	         South African Rand	R
+BRL	          Brazilian Real	  R$
+PHP	          Philippine Peso	  ₱
+NOK	          Norwegian Krone	  kr
+SEK	          Swedish Krona	    kr
+DKK	          Danish Krone	    kr
+RUB	          Russian Ruble	    ₽
+PLN	          Polish Zloty	    zł
+TRY	          Turkish Lira	    ₺
+IDR	         Indonesian Rupiah	Rp

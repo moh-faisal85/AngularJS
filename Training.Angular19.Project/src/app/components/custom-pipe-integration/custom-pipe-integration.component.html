@@ -1,0 +1,27 @@
+<p>custom-pipe-integration works!</p>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Contact No.</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employeeArray; let srno=index">
+                    <td>{{srno+1}}</td>
+                    <td>{{emp.name | customPipe }}</td>
+                    <td>{{emp.city }}</td>
+                    <td>{{emp.contactNo}}</td>
+                    <td>{{emp.salary |currency:'EUR'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
