@@ -55,6 +55,7 @@
                     <th>City</th>
                     <th>Contact No.</th>
                     <th>Salary</th>
+                    <th>Attendance</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +65,7 @@
                     <td>{{emp.city | uppercase }}</td>
                     <td>{{emp.contactNo}}</td>
                     <td>{{emp.salary | currency:'INR'}}</td>
+                    <td><app-progress-bar [progressValue] ="emp.attendance"></app-progress-bar></td>
                 </tr>
             </tbody>
         </table>
