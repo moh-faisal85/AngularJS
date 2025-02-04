@@ -4,7 +4,7 @@ import { CustomPipePipe } from '../../pipes/custom-pipe.pipe';
 
 @Component({
   selector: 'app-ng-for',
-  imports: [NgFor, UpperCasePipe, LowerCasePipe,JsonPipe, DatePipe,CurrencyPipe,TitleCasePipe],
+  imports: [NgFor, UpperCasePipe, LowerCasePipe, JsonPipe, DatePipe, CurrencyPipe, TitleCasePipe],
   templateUrl: './ng-for.component.html',
   styleUrl: './ng-for.component.css'
 })

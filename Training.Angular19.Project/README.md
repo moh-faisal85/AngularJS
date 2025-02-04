@@ -151,3 +151,8 @@ RUB	          Russian Ruble	    ₽
 PLN	          Polish Zloty	    zł
 TRY	          Turkish Lira	    ₺
 IDR	         Indonesian Rupiah	Rp
+
+Part-20: Input and Output feature in Angular
+********************************************
+If we want to pass a value from parent to child - Input
+If we want to pass a value from child to parent - Output
