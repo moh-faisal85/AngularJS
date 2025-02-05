@@ -18,6 +18,8 @@ export class PostApiComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {
     this.getAllCars();
   }
+
+  currentTab:string = "NewCar";
   //Create default Car List object
   carList: any[] = [];
   //Create default car object
@@ -93,5 +95,11 @@ export class PostApiComponent implements OnInit, AfterViewInit{
 
   clearForm(){
     
+  }
+
+  onTabChange(tabName:string)
+  {
+    debugger;
+    this.currentTab = tabName;
   }
 }

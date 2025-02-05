@@ -2,8 +2,11 @@
 <hr />
 <div class="row">
   <div class="col-12 text-center">
-    <app-tabs [tabList]="['Get','Post','Put','Delete']"></app-tabs>
+    <app-tabs [tabList]="['CarList','NewCar','Put','Delete']" (onTabClicked)="onTabChange($event)">
+
+    </app-tabs> 
   </div>
+  Current Tab Name: {{currentTab}}
 </div>
 <div class="row">
   <div class="col- text-center">
@@ -13,8 +16,11 @@
     <button class="btn btn-success" (click)="getAllCars()">Load Cars</button>
   </div>
 </div>
+
 <div class="row pt-2">
-  <div class="col-7">
+  @if(currentTab == "CarList" || currentTab == "")
+  {
+  <div class="col-7 text-center">
     <div class="card">
       <div class="car-header bg-warning">
         <h5 class="text-center">Car List</h5>
@@ -50,7 +56,9 @@
       </div>
     </div>
   </div>
-  <div class="col-5">
+  }
+  @else {
+  <div class="col-5 text-center">
     <div class="card">
       <div class="car-header bg-warning">
         <h5>Create New Car</h5>
@@ -103,6 +111,7 @@
       </div>
     </div>
   </div>
+  }
 </div>
 
 
