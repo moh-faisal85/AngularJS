@@ -13,6 +13,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
 import { CustomPipeIntegrationComponent } from './components/custom-pipe-integration/custom-pipe-integration.component';
+import { TabsComponent } from './reusable/tabs/tabs.component';
 
 export const routes: Routes = [
     {
@@ -75,5 +76,9 @@ export const routes: Routes = [
     {
         path:'customPipe',
         component:CustomPipeIntegrationComponent
+    },
+    {
+        path:'tabs',
+        component:TabsComponent
     }
 ];

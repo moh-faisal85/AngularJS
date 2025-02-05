@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
+import { TabsComponent } from "../../reusable/tabs/tabs.component";
 
 @Component({
   selector: 'app-customer',
-  imports: [FormsModule],
+  imports: [FormsModule, TabsComponent],
   templateUrl: './customer.component.html',
-  styleUrl: './customer.component.css'
+  styleUrl: ''
 })
 export class CustomerComponent {
+  tabList:string[]=["Apple1","Samsang-2","Nokia-3"];
   customerObj : any = {
     "customerId": 0,
     "customerName": "",
