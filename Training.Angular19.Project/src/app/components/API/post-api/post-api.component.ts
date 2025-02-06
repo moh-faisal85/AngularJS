@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabsComponent } from "../../../reusable/tabs/tabs.component";
+import { Car, ICarList } from '../../../model/car';
 
 @Component({
   selector: 'app-post-api',
@@ -21,19 +22,9 @@ export class PostApiComponent implements OnInit, AfterViewInit{
 
   currentTab:string = "NewCar";
   //Create default Car List object
-  carList: any[] = [];
+  carList: ICarList[] = [];
   //Create default car object
-  carObj: any =
-    {
-      "carId": 0,
-      "brand": "",
-      "model": "",
-      "year": "",
-      "color": "",
-      "dailyRate": "",
-      "carImage": "",
-      "regNo": ""
-    };
+  carObj: Car = new Car();
   //Inject HttpClient without constructor
   httpclient = inject(HttpClient);
 
@@ -51,6 +42,7 @@ export class PostApiComponent implements OnInit, AfterViewInit{
       if (response.result) {
         alert("New Car Details Saved Successfully");
         this.getAllCars();
+        this.carObj = new Car();
       }
       else {
         alert("Error: " + response.message);
