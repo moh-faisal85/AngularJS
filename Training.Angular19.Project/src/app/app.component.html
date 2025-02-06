@@ -1,82 +1,8 @@
-<main class="main pt-5">
-  <div class="content mt-4"> <!-- Added margin for spacing -->
-    <!-- Example Content -->
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" *ngIf="showScroll" (click)="scrollToTop()">
+    ⬆️
+  </button>
+<div class="">
+  <router-outlet></router-outlet>
   </div>
 
-  <!-- Fixed Navbar -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="admin">Admin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'dataBinding'">Data Binding</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="ng-class">Ng Class</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="control-faisal">Control Flow</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="signalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Signal
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="signalDropdown">
-              <li><a class="dropdown-item" routerLink="signal">Signal</a></li>
-              <li><a class="dropdown-item" routerLink="linked-signal">Linked Signal</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="signalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Forms
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="signalDropdown">
-              <li><a class="dropdown-item" routerLink="TemplateForm">Template Form</a></li>
-              <li><a class="dropdown-item" routerLink="ReactiveForm">Reactive Form</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="signalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              API
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="signalDropdown">
-              <li><a class="dropdown-item" routerLink="get-api">GET API</a></li>
-              <li><a class="dropdown-item" routerLink="post-api">POST API</a></li>
-              <li><a class="dropdown-item" routerLink="customer">Customer</a></li>
-              <li><a class="dropdown-item" routerLink="">DELETE API</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="lifeCycle">lifeCycle</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="forloop">For Loop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="customPipe">Custom Pipe</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="tabs">Tabs</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Search">
-          <button class="btn btn-primary" type="button">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-  <!-- Scroll to Top Button -->
-<button class="scroll-to-top" *ngIf="showScroll" (click)="scrollToTop()">
-  ⬆️
-</button>
-</main>
-
-<router-outlet></router-outlet>

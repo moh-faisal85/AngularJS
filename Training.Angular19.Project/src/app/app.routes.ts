@@ -14,71 +14,85 @@ import { LifeCycleComponent } from './components/life-cycle/life-cycle.component
 import { NgForComponent } from './components/ng-for/ng-for.component';
 import { CustomPipeIntegrationComponent } from './components/custom-pipe-integration/custom-pipe-integration.component';
 import { TabsComponent } from './reusable/tabs/tabs.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
     {
         path:'',
-        redirectTo:'dataBinding',
+        redirectTo:'login',
         pathMatch:'full'
     },
     {
-        path:'admin',
-        component:AdminComponent
+        path:'login',
+        component:LoginComponent
     },
     {
-        path:'dataBinding',
-        component:DataBindingComponent
-    },
-    {
-        path:'ng-class',
-        component:NgClassComponent
-    },
-    {
-        path:'control-faisal',
-        component:ControlStatementComponent
-    },
-    {
-        path:'signal',
-        component:SignalComponent
-    },
-    {
-        path:'linked-signal',
-        component:LinkedSignalComponent
-    },
-    {
-        path:'TemplateForm',
-        component:TemplateFormComponent
-    },
-    {
-        path:'ReactiveForm',
-        component:ReactiveFormComponent
-    },
-    {
-        path:'get-api',
-        component:GetApiComponent
-    },
-    {
-        path:'post-api',
-        component:PostApiComponent
-    },
-    {
-        path:'customer',
-        component:CustomerComponent
-    },
-    {
-        path:'lifeCycle',
-        component:LifeCycleComponent
-    },
-    {
-        path:'forloop',
-        component:NgForComponent
-    },
-    {
-        path:'customPipe',
-        component:CustomPipeIntegrationComponent
-    },
-    {
-        path:'tabs',
-        component:TabsComponent
+        path:'',
+        component:LayoutComponent,
+        children:[
+            {
+                path:'admin',
+                component:AdminComponent
+            },
+            {
+                path:'dataBinding',
+                component:DataBindingComponent
+            },
+            {
+                path:'ng-class',
+                component:NgClassComponent
+            },
+            {
+                path:'control-faisal',
+                component:ControlStatementComponent
+            },
+            {
+                path:'signal',
+                component:SignalComponent
+            },
+            {
+                path:'linked-signal',
+                component:LinkedSignalComponent
+            },
+            {
+                path:'TemplateForm',
+                component:TemplateFormComponent
+            },
+            {
+                path:'ReactiveForm',
+                component:ReactiveFormComponent
+            },
+            {
+                path:'get-api',
+                component:GetApiComponent
+            },
+            {
+                path:'post-api',
+                component:PostApiComponent
+            },
+            {
+                path:'customer',
+                component:CustomerComponent
+            },
+            {
+                path:'lifeCycle',
+                component:LifeCycleComponent
+            },
+            {
+                path:'forloop',
+                component:NgForComponent
+            },
+            {
+                path:'customPipe',
+                component:CustomPipeIntegrationComponent
+            },
+            {
+                path:'tabs',
+                component:TabsComponent
+            },
+        
+        ]
     }
+        
 ];
