@@ -12,7 +12,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   //imports: [RouterOutlet,UserComponent,AdminComponent,DataBindingComponent,NgIfComponent,NgForComponent, NgClassComponent,NgStyleComponent],
-  imports: [RouterOutlet, RouterLink,  NgIf],
+  imports: [RouterOutlet,  NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

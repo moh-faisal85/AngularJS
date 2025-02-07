@@ -16,6 +16,7 @@ import { CustomPipeIntegrationComponent } from './components/custom-pipe-integra
 import { TabsComponent } from './reusable/tabs/tabs.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { CircularProgressBarComponent } from './components/circular-progress-bar/circular-progress-bar.component';
 
 export const routes: Routes = [
     {
@@ -91,6 +92,10 @@ export const routes: Routes = [
                 path:'tabs',
                 component:TabsComponent
             },
+            {
+                path:'cprogress',
+                component:CircularProgressBarComponent
+            }
         
         ]
     }

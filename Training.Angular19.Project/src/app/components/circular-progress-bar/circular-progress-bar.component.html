@@ -1,0 +1,14 @@
+<div class="container mt-5 text-center">
+    <h2>Circular Progress Bars with Color Variations</h2>
+    <div class="d-flex justify-content-center flex-wrap gap-4 mt-4">
+      <div *ngFor="let progress of progressBars">
+        <div class="circle" [ngStyle]="{'background': getConicGradient(progress.value, progress.color)}">
+          <div class="circle-inner">
+            <span>{{ progress.value }}%</span>
+          </div>
+        </div>
+        <p>{{ progress.label }}</p>
+      </div>
+    </div>
+  </div>
+  
