@@ -1,9 +1,9 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ng-temp-ng-container',
-  imports: [NgIf,NgFor],
+  imports: [NgIf,NgFor, NgTemplateOutlet],
   templateUrl: './ng-temp-ng-container.component.html',
   styleUrl: './ng-temp-ng-container.component.css'
 })

@@ -13,20 +13,12 @@
             </thead>
             <tbody>
                 <ng-container *ngIf="isLoader">
-                    <tr>
-                        <td colspan="5" class="text-align">
-                            <div class="spinner-border text-muted"></div>
-                            <div class="spinner-border text-primary"></div>
-                            <div class="spinner-border text-success"></div>
-                            <div class="spinner-border text-info"></div>
-                            <div class="spinner-border text-warning"></div>
-                            <div class="spinner-border text-danger"></div>
-                            <div class="spinner-border text-secondary"></div>
-                            <div class="spinner-border text-dark"></div>
-                            <div class="spinner-border text-light"></div>
+                    <!-- <ng-container *ngTemplateOutlet="spinLoaderTemplate">
+                   
+                    </ng-container> -->
+                    <div [ngTemplateOutlet]="spinLoaderTemplate">
 
-                        </td>
-                    </tr>
+                    </div>
                 </ng-container>
                 <ng-container *ngIf="!isLoader">
                     <tr *ngFor="let emp of employeeArray; let srno=index">
@@ -50,4 +42,20 @@
     <div class="text-danger">
         <span>De-Active</span>
     </div>
+</ng-template>
+<ng-template #spinLoaderTemplate>
+  <tr>
+    <td colspan="5" class="text-align">
+      <div class="spinner-border text-muted"></div>
+      <div class="spinner-border text-primary"></div>
+      <div class="spinner-border text-success"></div>
+      <div class="spinner-border text-info"></div>
+      <div class="spinner-border text-warning"></div>
+      <div class="spinner-border text-danger"></div>
+      <div class="spinner-border text-secondary"></div>
+      <div class="spinner-border text-dark"></div>
+      <div class="spinner-border text-light"></div>
+
+    </td>
+  </tr>
 </ng-template>
