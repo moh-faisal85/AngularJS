@@ -36,8 +36,7 @@
                         <td>{{emp.contactNo}}</td>
                         <td>{{emp.salary }}</td>
                         <td>
-                            <h1 *ngIf="emp.isActive">Active</h1>
-                            <h1 *ngIf="!emp.isActive">De-Active</h1>
+                            <h1 *ngIf="emp.isActive else tempDeActive">Active</h1>
                         </td>
                     </tr>
                 </ng-container>
@@ -46,3 +45,9 @@
         </table>
     </div>
 </div>
+
+<ng-template #tempDeActive>
+    <div class="text-danger">
+        <span>De-Active</span>
+    </div>
+</ng-template>
