@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CircularProgressBarComponent } from './components/circular-progress-bar/circular-progress-bar.component';
 import { ResourceApiComponent } from './components/resource-api/resource-api.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -32,10 +33,12 @@ export const routes: Routes = [
     {
         path:'',
         component:LayoutComponent,
+        canActivate:[authGuard],
         children:[
             {
                 path:'admin',
                 component:AdminComponent
+                
             },
             {
                 path:'dataBinding',
