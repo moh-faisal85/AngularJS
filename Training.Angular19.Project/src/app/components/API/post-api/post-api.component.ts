@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabsComponent } from "../../../reusable/tabs/tabs.component";
 import { Car, ICarList } from '../../../model/car';
@@ -23,6 +23,12 @@ export class PostApiComponent implements OnInit, AfterViewInit{
   currentTab:string = "NewCar";
   //Create default Car List object
   carList: ICarList[] = [];
+//View Child to read control values
+  @ViewChild('txtCity') cityTextBox : ElementRef | undefined;
+
+  //Access third party component values
+  @ViewChild(TabsComponent) myTabViewChild : TabsComponent | undefined;
+
   //Create default car object
   carObj: Car = new Car();
   //Inject HttpClient without constructor
@@ -93,5 +99,17 @@ export class PostApiComponent implements OnInit, AfterViewInit{
   {
     debugger;
     this.currentTab = tabName;
+  }
+
+  readCity()
+  {
+    //debugger;
+    const city  = this.cityTextBox?.nativeElement.value;
+    if(this.cityTextBox)
+    {
+      this.cityTextBox.nativeElement.style.color="red";
+    }
+    const val = this.myTabViewChild?.currentTab;
+    debugger;
   }
 }

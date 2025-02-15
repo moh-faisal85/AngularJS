@@ -8,6 +8,7 @@
   </div>
   Current Tab Name: {{currentTab}}
 </div>
+
 <div class="row">
   <div class="col- text-center">
     <h2>POST API Integration using Template Form</h2>
@@ -17,6 +18,8 @@
   </div>
 </div>
 
+<input type="text" #txtCity placeholder="Enter the city name" />
+<button (click)="readCity()">Read City</button>
 <div class="row pt-2">
   @if(currentTab == "CarList" || currentTab == "")
   {
