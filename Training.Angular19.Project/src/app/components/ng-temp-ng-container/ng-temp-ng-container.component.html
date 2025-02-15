@@ -1,0 +1,48 @@
+<div class="row mt-5">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Contact No.</th>
+                    <th>Salary</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="isLoader">
+                    <tr>
+                        <td colspan="5" class="text-align">
+                            <div class="spinner-border text-muted"></div>
+                            <div class="spinner-border text-primary"></div>
+                            <div class="spinner-border text-success"></div>
+                            <div class="spinner-border text-info"></div>
+                            <div class="spinner-border text-warning"></div>
+                            <div class="spinner-border text-danger"></div>
+                            <div class="spinner-border text-secondary"></div>
+                            <div class="spinner-border text-dark"></div>
+                            <div class="spinner-border text-light"></div>
+
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container *ngIf="!isLoader">
+                    <tr *ngFor="let emp of employeeArray; let srno=index">
+                        <td>{{srno+1}}</td>
+                        <td>{{emp.name }}</td>
+                        <td>{{emp.city }}</td>
+                        <td>{{emp.contactNo}}</td>
+                        <td>{{emp.salary }}</td>
+                        <td>
+                            <h1 *ngIf="emp.isActive">Active</h1>
+                            <h1 *ngIf="!emp.isActive">De-Active</h1>
+                        </td>
+                    </tr>
+                </ng-container>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

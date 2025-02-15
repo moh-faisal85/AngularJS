@@ -19,6 +19,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CircularProgressBarComponent } from './components/circular-progress-bar/circular-progress-bar.component';
 import { ResourceApiComponent } from './components/resource-api/resource-api.component';
 import { authGuard } from './guard/auth.guard';
+import { NgTempNgContainerComponent } from './components/ng-temp-ng-container/ng-temp-ng-container.component';
 
 export const routes: Routes = [
     {
@@ -103,6 +104,10 @@ export const routes: Routes = [
             {
                 path:'resourceApi',
                 component: ResourceApiComponent
+            },
+            {
+                path:'ngTemp',
+                component: NgTempNgContainerComponent
             }
         
         ]

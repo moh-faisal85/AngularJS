@@ -168,3 +168,7 @@ Note: Guard invoked before navigating from one component to another component
 Generate guard using below command 
 
 ng g g auth
+
+Part-26-ng-container
+********************
+https://www.w3schools.com/bootstrap4/bootstrap_spinners.asp
