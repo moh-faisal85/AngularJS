@@ -172,3 +172,8 @@ ng g g auth
 Part-26-ng-container
 ********************
 https://www.w3schools.com/bootstrap4/bootstrap_spinners.asp
+
+Part-27-Login -Interceptor 
+create interceptor using below command
+
+PS C:\GIT\Trainings\AngularJS\Training.Angular19.Project\src\app\interceptor> ng g interceptor token

@@ -36,6 +36,8 @@ export class LoginComponent {
     this.http.post("/api/UserApp/login" , this.apiLoginObj).subscribe((res:any) => {
       debugger;
       localStorage.setItem("angular19User", res.data.userId);
+      localStorage.setItem("angular19Token", res.data.token);
+      
       this.router.navigateByUrl("admin");
     }, error => {
       debugger;
