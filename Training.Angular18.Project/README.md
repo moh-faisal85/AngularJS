@@ -1,3 +1,14 @@
+# Training Steps - Integrate New Chiled Component Into Angular App
+- Create a new component by executing 'ng g c roles' command via terminal
+- Import new (roles) component as part of 'app.component.ts > @Component > imports ([RolesComponent])
+    - Ensure respective component's import statemented added on top of page.
+- Add few variable as part of 'src\app\components\roles.component.ts' file
+- One Way Binding - Display variable using interpolation {title}, one way (attribute) binding <input type="text" [value]="title" />
+- Two Way binding - import 'FormsModule' as part of 'src\app\components\roles.component.ts' file > @Component > imports ([FormsModule])
+    - Ensure respective FormsModule's import statemented added on top of page.
+- Function - Event Binding 
+    -V arious way to create function with and without parameter
+# ***************************************************************************************************************
 # TrainingAngular18Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.19.
