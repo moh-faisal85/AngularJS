@@ -1,7 +1,14 @@
- <h1>{{title}}</h1>
+<h1>{{title}}</h1>
 <div>
-<ul>
-    <li *ngFor="let fruit of fruits; let i=index;">{{i+1}}-{{fruit}}</li>
-</ul>
-</div> 
+  <h2>ngFor index, first , last, odd, even - Item from Array Example</h2>
+  <ul style="width: 400px;">
+
+    <li *ngFor="let fruit of fruits; let i=index;let isFirst=first; let isLast=last; let isEven = even; let isOdd = odd"
+        [ngClass]="{'even-item': isEven, 'odd-item': isOdd}">
+      <strong *ngIf="isFirst">First:</strong>
+      <strong *ngIf="isLast">Last:</strong>
+      {{i+1}}-{{fruit}}
+    </li>
+  </ul>
+</div>
 
