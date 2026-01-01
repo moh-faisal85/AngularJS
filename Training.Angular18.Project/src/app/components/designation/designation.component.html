@@ -13,4 +13,9 @@
   <input type="checkbox" [(ngModel)]="showMe" />Select
   <h1 *ngIf="showMe">Hello World! - {{showMe}}</h1>
 </div>
-
+<div [ngClass]="['primary', 'bigFont']">
+ngClass Implementation
+</div>
+<div [ngClass]="{'primary':showMe}">
+ngClass Implementation
+</div>
