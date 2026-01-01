@@ -14,7 +14,7 @@ import { NotesComponent } from '../notes/notes.component';
 })
 
 export class MasterComponent {
-  currentComponent: string = 'Roles';
+  currentComponent: string = 'Designation';
   changeTab(tabName: string) {
     this.currentComponent = tabName;
     //alert(tabName);
