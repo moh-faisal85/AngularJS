@@ -1,0 +1,35 @@
+.note-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.note-input {
+  width: 240px;
+  padding: 4px;
+}
+
+.icon-btn {
+  margin-left: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-btn {
+  color: green;
+}
+
+.delete-btn {
+  color: red;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.info {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #555;
+}

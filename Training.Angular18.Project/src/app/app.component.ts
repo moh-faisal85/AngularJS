@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { RolesComponent } from './components/roles/roles.component';
 import { MasterComponent } from './components/master/master.component';
 
 @Component({
