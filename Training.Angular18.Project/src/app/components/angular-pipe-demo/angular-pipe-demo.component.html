@@ -1,0 +1,223 @@
+
+<h1>Angular Pipe Demo</h1>
+
+<h1> String Manipulation</h1>
+<h1>Angular String Pipe Demo</h1>
+
+<h2>Original String</h2>
+<b>Original:</b> {{ text }}
+<hr>
+
+<h2>Built-in String Manipulation Pipes</h2>
+
+<b>Uppercase:</b>
+{{ text | uppercase }}
+<br><br>
+
+<b>Lowercase:</b>
+{{ text | lowercase }}
+<br><br>
+
+<b>Titlecase:</b>
+{{ text | titlecase }}
+<br><br>
+
+<b>Slice (0–7):</b>
+{{ text | slice:0:7 }}
+<br><br>
+
+<b>Slice (8–13):</b>
+{{ text | slice:8:13 }}
+<br><br>
+
+<h2>Chaining Pipes</h2>
+
+<b>Uppercase + Slice (0–7):</b>
+{{ text | uppercase | slice:0:7 }}
+<br><br>
+
+<b>Titlecase + Slice (0–15):</b>
+{{ text | titlecase | slice:0:15 }}
+<br><br>
+
+<h2>Real-world Examples</h2>
+
+<b>Username (Title Case):</b>
+{{ text | titlecase }}
+<br><br>
+
+<b>Email (Lowercase):</b>
+{{ text | lowercase }}
+<br><br>
+
+<b>Description Preview (First 30 chars):</b>
+{{ text | slice:0:30 }}...
+
+<hr/>
+<b>Unformatted Current Date:</b> {{ currentDate }} <br>
+<b>Formatted (Default Date Pipe):</b> {{ currentDate | date }} <br>
+
+<hr>
+
+<h2>✅ Common Date Formats (Most Used)</h2>
+<b>Short:</b> {{ currentDate | date:'short' }} <br>
+<b>Medium:</b> {{ currentDate | date:'medium' }} <br>
+<b>Long:</b> {{ currentDate | date:'long' }} <br>
+<b>Full:</b> {{ currentDate | date:'full' }} <br>
+
+<hr>
+
+<h2>✅ Date-Only Formats</h2>
+<b>Short Date:</b> {{ currentDate | date:'shortDate' }} <br>
+<b>Medium Date:</b> {{ currentDate | date:'mediumDate' }} <br>
+<b>Long Date:</b> {{ currentDate | date:'longDate' }} <br>
+<b>Full Date:</b> {{ currentDate | date:'fullDate' }} <br>
+
+<hr>
+
+<h2>✅ Time-Only Formats</h2>
+<b>Short Time:</b> {{ currentDate | date:'shortTime' }} <br>
+<b>Medium Time:</b> {{ currentDate | date:'mediumTime' }} <br>
+<b>Long Time:</b> {{ currentDate | date:'longTime' }} <br>
+
+<hr>
+
+<h2>✅ Custom Date & Time Formats</h2>
+<b>dd/MM/yyyy:</b> {{ currentDate | date:'dd/MM/yyyy' }} <br>
+<b>dd-MM-yyyy:</b> {{ currentDate | date:'dd-MM-yyyy' }} <br>
+<b>yyyy-MM-dd:</b> {{ currentDate | date:'yyyy-MM-dd' }} <br>
+<b>MMM d, y:</b> {{ currentDate | date:'MMM d, y' }} <br>
+<b>EEEE, MMMM d, y:</b> {{ currentDate | date:'EEEE, MMMM d, y' }} <br>
+
+<hr>
+
+<h2>✅ Custom Time Formats</h2>
+<b>hh:mm a:</b> {{ currentDate | date:'hh:mm a' }} <br>
+<b>HH:mm:ss:</b> {{ currentDate | date:'HH:mm:ss' }} <br>
+<b>hh:mm:ss a:</b> {{ currentDate | date:'hh:mm:ss a' }} <br>
+
+<hr>
+
+<h2>✅ Date + Time Together</h2>
+<b>dd/MM/yyyy hh:mm a:</b> {{ currentDate | date:'dd/MM/yyyy hh:mm a' }} <br>
+<b>yyyy-MM-dd HH:mm:ss:</b> {{ currentDate | date:'yyyy-MM-dd HH:mm:ss' }} <br>
+<hr>
+<h1>Number Formatter Pipe</h1>
+<h1>Angular Number Pipe Demo</h1>
+
+<h2>Original Number</h2>
+<b>Original:</b> {{ num }}
+<hr>
+
+<h2>Integer Formatting</h2>
+
+<b>Integer Only (No Decimals):</b>
+{{ num | number:'1.0-0' }}
+<br><br>
+
+<b>Minimum 2 Digits (No Decimals):</b>
+{{ num | number:'2.0-0' }}
+<br><br>
+
+<h2>Decimal Formatting</h2>
+
+<b>1 Decimal:</b>
+{{ num | number:'1.1-1' }}
+<br><br>
+
+<b>2 Decimals:</b>
+{{ num | number:'1.2-2' }}
+<br><br>
+
+<b>Up to 3 Decimals:</b>
+{{ num | number:'1.0-3' }}
+<br><br>
+
+<h2>Thousand Separator</h2>
+
+<b>Default Formatting:</b>
+{{ num | number }}
+<br><br>
+
+<h2>Large Numbers</h2>
+
+<b>Large Number Format:</b>
+{{ bigNum | number:'1.0-0' }}
+<br><br>
+
+<h2>Negative Numbers</h2>
+
+<b>Negative Integer:</b>
+{{ negNum | number:'1.0-0' }}
+<br><br>
+<hr>
+
+<h1>Angular Currency Pipe Demo</h1>
+
+<h2>Original Amount</h2>
+<b>Original:</b> {{ amount }}
+<hr>
+
+<h2>Default Currency (Locale Based)</h2>
+<b>Default:</b>
+{{ amount | currency }}
+<br><br>
+
+<h2>INR Currency</h2>
+<b>INR (Symbol):</b>
+{{ amount | currency:'INR' }}
+<br><br>
+
+<b>INR (Code):</b>
+{{ amount | currency:'INR':'code' }}
+<br><br>
+
+<b>INR (Symbol Narrow):</b>
+{{ amount | currency:'INR':'symbol-narrow' }}
+<br><br>
+
+<h2>USD Currency</h2>
+<b>USD (Symbol):</b>
+{{ amount | currency:'USD' }}
+<br><br>
+
+<b>USD (Code):</b>
+{{ amount | currency:'USD':'code' }}
+<br><br>
+
+<h2>EUR Currency</h2>
+<b>EUR (Symbol):</b>
+{{ amount | currency:'EUR' }}
+<br><br>
+
+<b>EUR (Code):</b>
+{{ amount | currency:'EUR':'code' }}
+<br><br>
+
+<h2>Without Decimals</h2>
+<b>INR (No Decimals):</b>
+{{ amount | currency:'INR':'symbol':'1.0-0' }}
+<br><br>
+
+<b>USD (No Decimals):</b>
+{{ amount | currency:'USD':'symbol':'1.0-0' }}
+<br><br>
+
+<h2>With Fixed Decimals</h2>
+<b>INR (2 Decimals):</b>
+{{ amount | currency:'INR':'symbol':'1.2-2' }}
+<br><br>
+
+<b>USD (3 Decimals):</b>
+{{ amount | currency:'USD':'symbol':'1.3-3' }}
+<br><br>
+
+<h2>Negative Amount</h2>
+<b>Negative INR:</b>
+{{ negAmount | currency:'INR' }}
+<br><br>
+
+<h2>Large Amount</h2>
+<b>Large USD:</b>
+{{ largeAmount | currency:'USD' }}
+<br><br>
