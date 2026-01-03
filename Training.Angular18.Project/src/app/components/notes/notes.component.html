@@ -1,19 +1,18 @@
 <table border="1" style="text-align: left;">
-
   <tr>
     <td>
       <div
-        *ngFor="let note of notesArray; let i = index; trackBy: trackByIndex"
+        *ngFor="let note of notesArray; let i = index; trackBy: trackById"
         class="note-row"
       >
         <input
           type="text"
           class="note-input"
-          [ngModel]="notesArray[i]"
+          [ngModel]="note.value"
           (ngModelChange)="onNoteInput(i, $event)"
           (paste)="onPaste($event, i)"
         />
- <!-- Delete disabled if only one textbox -->
+ <!-- Delete disabled if only one -->
         <button
           type="button"
           class="icon-btn delete-btn"
@@ -22,7 +21,7 @@
         >
           ✕
         </button>
-        <!-- Add button only on last textbox -->
+        <!-- Add only on last -->
         <button
           *ngIf="i === notesArray.length - 1"
           type="button"
@@ -35,13 +34,13 @@
        
       </div>
 
-      <!-- Optional live counter -->
+      <div class="error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
       <div class="info">
-        Total length: {{ notes.length }} / {{ MAX_LENGTH }}
+        {{ notes.length }} / {{ MAX_LENGTH }}
       </div>
     </td>
-  </tr>
-    <tr>
-    <td><h3>{{notes}}</h3></td>
   </tr>
 </table>

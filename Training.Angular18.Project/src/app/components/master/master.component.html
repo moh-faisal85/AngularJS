@@ -6,6 +6,7 @@
       <button type="button" class="btn" [ngClass]="currentComponent == 'Designation' ? 'btn-success': 'btn-primary'" (click)="changeTab('Designation')">Designation</button>
       <button type="button" class="btn" [ngClass]="currentComponent == 'Notes' ? 'btn-success': 'btn-primary'" (click)="changeTab('Notes')">Notes</button>
       <button type="button" class="btn" [ngClass]="currentComponent == 'Counter' ? 'btn-success': 'btn-primary'" (click)="changeTab('Counter')">Counter</button>
+      <button type="button" class="btn" [ngClass]="currentComponent == 'CustDir' ? 'btn-success': 'btn-primary'" (click)="changeTab('CustDir')">CustDir</button>
     </div>
   </div>
 </div>
@@ -13,8 +14,23 @@
   <div class="col-12 text-center">
     <app-roles *ngIf="currentComponent == 'Roles'"></app-roles>
     <app-designation *ngIf="currentComponent == 'Designation'"></app-designation>
-    <app-notes *ngIf="currentComponent == 'Notes'"></app-notes>
+    <app-notes *ngIf="currentComponent == 'Notes'" [(notes)]="parentNotes"></app-notes>
+
     <app-counter *ngIf="currentComponent == 'Counter'"></app-counter>
   </div>
 
+</div>
+<div class="row">
+  <div class="col-12 text-center">
+    <app-custom-directive-demo></app-custom-directive-demo>
+    </div>
+    </div>
+<div>
+
+<p>
+  <strong>Parent Value:</strong> {{ parentNotes }}
+</p>
+<p>
+  <input type="text" [(ngModel)]="parentNotes">
+</p>
 </div>

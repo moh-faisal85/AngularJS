@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+interface NoteItem {
+  id: number;
+  value: string;
+}
 
 @Component({
   selector: 'app-notes',
@@ -12,93 +17,146 @@ export class NotesComponent {
 
   readonly MAX_LENGTH = 4000;
 
-  // Backend string
-  notes: string = 'First note,Second note,Third note';
+  /* ---------------- Parent <-> Child Binding ---------------- */
 
-  // UI model
-  notesArray: string[] = [];
+  private _notes = '';
 
-  ngOnInit() {
-    this.initializeNotes();
+  @Input()
+  set notes(value: string) {
+    if (value !== this._notes) {
+      this._notes = value || '';
+      this.initializeFromParent();
+    }
   }
 
-  initializeNotes() {
-    this.notesArray = this.notes
-      ? this.notes.split(',').map(n => n.trim())
-      : [''];
-
-    this.updateNotes();
+  get notes(): string {
+    return this._notes;
   }
+
+  @Output() notesChange = new EventEmitter<string>();
+
+  /* ---------------- Internal State ---------------- */
+
+  notesArray: NoteItem[] = [];
+  errorMessage = '';
+
+  private lastEmittedValue = '';
+  private idCounter = 0;
+
+  /* ---------------- Initialization ---------------- */
+
+  initializeFromParent() {
+    this.notesArray = this._notes
+      ? this._notes.split(',').map(n => ({
+          id: ++this.idCounter,
+          value: n.trim()
+        }))
+      : [{ id: ++this.idCounter, value: '' }];
+
+    this.lastEmittedValue = this._notes;
+  }
+
+  /* ---------------- Add ---------------- */
 
   addNote() {
-    // Check for empty textbox
-    const hasEmptyNote = this.notesArray.some(note => note.trim() === '');
-    if (hasEmptyNote) {
-      alert('Please fill all existing notes before adding a new one');
+    this.clearError();
+
+    if (this.hasEmptyNote()) {
+      this.setError('Please fill all existing notes before adding a new one');
       return;
     }
 
-
-    // Check max length
-    if (this.notes.length >= this.MAX_LENGTH) {
-      alert('Maximum 4000 characters reached');
+    if (!this.isValidLength([...this.getValues(), ''])) {
+      this.setError('Maximum 4000 characters allowed');
       return;
     }
 
-    this.notesArray.push('');
-
+    this.notesArray.push({ id: ++this.idCounter, value: '' });
   }
+
+  /* ---------------- Delete ---------------- */
 
   deleteNote(index: number) {
     if (this.notesArray.length === 1) {
       return;
     }
+
     this.notesArray.splice(index, 1);
-    this.updateNotes();
+    this.updateAndEmit();
   }
+
+  /* ---------------- Typing ---------------- */
 
   onNoteInput(index: number, value: string) {
-    const tempArray = [...this.notesArray];
-    tempArray[index] = value;
+    this.clearError();
 
-    const combined = tempArray.join(',');
+    const temp = this.getValues();
+    temp[index] = value;
 
-    if (combined.length > this.MAX_LENGTH) {
-      alert('Total notes length cannot exceed 4000 characters');
+    if (!this.isValidLength(temp)) {
+      this.setError('Total notes length cannot exceed 4000 characters');
       return;
     }
 
-    this.notesArray[index] = value;
-    this.notes = combined;
+    this.notesArray[index].value = value;
+    this.updateAndEmit();
   }
 
-  // Handles paste explicitly
+  /* ---------------- Paste ---------------- */
+
   onPaste(event: ClipboardEvent, index: number) {
     event.preventDefault();
+    this.clearError();
 
     const pasteText = event.clipboardData?.getData('text') || '';
-    const tempArray = [...this.notesArray];
-    tempArray[index] = pasteText;
+    const temp = this.getValues();
+    temp[index] = pasteText;
 
-    const combined = tempArray.join(',');
-
-    if (combined.length > this.MAX_LENGTH) {
-      alert('Pasting exceeds 4000 characters limit');
+    if (!this.isValidLength(temp)) {
+      this.setError('Pasted content exceeds 4000 characters limit');
       return;
     }
 
-    this.notesArray[index] = pasteText;
-    this.notes = combined;
+    this.notesArray[index].value = pasteText;
+    this.updateAndEmit();
   }
 
-  updateNotes() {
-    const combined = this.notesArray.join(',');
-    if (combined.length <= this.MAX_LENGTH) {
-      this.notes = combined;
+  /* ---------------- Helpers ---------------- */
+
+  private updateAndEmit() {
+    const combined = this.notesArray
+      .map(n => n.value.trim())
+      .filter(v => v !== '')
+      .join(',');
+
+    if (combined !== this.lastEmittedValue) {
+      this.lastEmittedValue = combined;
+      this._notes = combined;
+      this.notesChange.emit(this._notes);
     }
   }
 
-  trackByIndex(index: number): number {
-    return index;
+  private getValues(): string[] {
+    return this.notesArray.map(n => n.value);
+  }
+
+  private isValidLength(values: string[]): boolean {
+    return values.join(',').length <= this.MAX_LENGTH;
+  }
+
+  private hasEmptyNote(): boolean {
+    return this.notesArray.some(n => n.value.trim() === '');
+  }
+
+  private setError(msg: string) {
+    this.errorMessage = msg;
+  }
+
+  private clearError() {
+    this.errorMessage = '';
+  }
+
+  trackById(_: number, item: NoteItem) {
+    return item.id;
   }
 }
