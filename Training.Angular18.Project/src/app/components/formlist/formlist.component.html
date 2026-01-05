@@ -1,0 +1,13 @@
+<div>
+    <h2>Car List</h2>
+    @if (carNamesFromLostComp.length > 0) {
+    <ul>
+        <li *ngFor="let car of carNamesFromLostComp">
+{{car}}
+        </li>
+    </ul>
+}
+@else {
+    <p>No Car Found !</p>
+}
+    </div>
