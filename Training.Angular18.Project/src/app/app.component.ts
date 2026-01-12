@@ -13,10 +13,10 @@ import { FormlistComponent } from './components/formlist/formlist.component';
 })
 export class AppComponent {
 
-  carNames:string[]=[];
-  onCarAdded(carName:string)
-  {
-    this.carNames.push(carName);
-    console.log(carName, 'From App Component');
-  }
+  // carNames:string[]=[];
+  // onCarAdded(carName:string)
+  // {
+  //   this.carNames.push(carName);
+  //   console.log(carName, 'From App Component');
+  // }
 }
